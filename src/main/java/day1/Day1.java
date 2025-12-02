@@ -17,9 +17,6 @@ public class Day1 {
 
     public int getPassword() {
         lines.forEach(line -> {
-            if (position == 0) {
-                timesHitZero++;
-            }
             final var count = Integer.parseInt(line.substring(1));
             if (line.startsWith("R")) {
                 handleIncrease(count);
@@ -33,6 +30,7 @@ public class Day1 {
     public void handleIncrease(final int count) {
         position+=count;
         while(position>99){
+            timesHitZero++;
             position-=100;
         }
     }
@@ -40,6 +38,7 @@ public class Day1 {
     public void handleDecrease(final int count) {
         position-=count;
         while(position<0){
+            timesHitZero++;
             position+=100;}
     }
 }
