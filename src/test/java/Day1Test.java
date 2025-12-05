@@ -1,5 +1,3 @@
-package day1;
-
 import junit.framework.TestCase;
 
 import java.io.IOException;
